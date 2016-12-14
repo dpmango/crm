@@ -1,7 +1,13 @@
-# gulp-starter-pack
-Gulp starter package to use with sass, autoprefixer, bootstrap, minification and other common front-end tasks
+# CRM FRONT END
 
-To use:
-1. Install node.js, npm
-2. Run npm install
-3. Work with /src folder and get the processing result in /dist
+Работаем над версткой и front-end для CRM системы
+
+__Для запуска__
+- Установить node.js и gulp
+- Запустить `npm i`
+- Запустить `gulp` (команда default)
+- Работать в папке `/src`
+
+__Для продакшена__
+- Запустить `gulp build`
+- Результат компиляции будет в папке `dist`
