@@ -43,7 +43,7 @@ gulp.task('watch', function(){
 gulp.task('build', function (callback) {
   runSequence(
     'clean:dist',
-    //'sass',
+    'sass',
     ['useref', 'images', 'fonts'],
     callback
   )
@@ -93,7 +93,7 @@ gulp.task('useref', function(){
   return gulp.src('./src/*.html')
     .pipe(useref())
     .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulpIf('*.css', cssnano()))
+    //.pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist'))
 });
 
