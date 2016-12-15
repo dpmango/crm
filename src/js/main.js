@@ -13,4 +13,7 @@ $(document).ready(function(){
         return false;
 	});
 
+  // This will initialize all Material modules
+  // var md = new Material();
+
 });

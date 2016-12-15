@@ -1,0 +1,59 @@
+// layout
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic')
+
+$fontColor: #515974
+$fontColorLight: #69717f
+$fontColorTiny: #a5a6bb
+$colorGreen: #4ab68f
+$colorRed: #f45b63
+$colorYellow: #fda737
+$orangeColor: #f46d36
+$dark: #101226
+$borderColorLight: #f0f3f7
+$borderButtonOutline: #a8bec9
+
+$mobile: width <= 500px
+$tablet: width <= 768px
+$desktop: width <= 1000px
+$wide: width >= 1200px
+$hd: width >= 1680px
+
+*
+  box-sizing: border-box
+
+a
+  color: inherit
+  &:hover
+    text-decoration: none
+
+html
+  font-size: 14px
+body
+  background: white
+  color: $fontColor
+  font-family: Tahoma
+  font-size: 14px
+  max-width: 100%
+  overflow-x: hidden
+
+.dashboard
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-between
+  min-height: 100vh
+  @media($mobile)
+    flex-direction: column
+
+
+.sidebar
+  flex: 0 0 auto
+  background: $dark
+  padding-left: .4em
+
+.sites
+  flex: 1 1 30%
+  padding: 3em 2em
+
+.site-config
+  flex: 2 1 40%

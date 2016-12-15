@@ -1,0 +1,45 @@
+//Sidebar
+
+.sidebar__search
+  margin-top: 1em
+  margin-bottom: 2em
+  padding-left: 2em
+  .text-input
+    background-image: url('../images/ico-search.svg')
+    background-repeat: no-repeat
+    background-position: right center
+    &:not(:focus)
+      border-bottom-color: #a8bec9
+      border-bottom-width: 2px
+    &:focus
+      border-bottom-color: $colorGreen
+.sidebar__nav
+  &--bottom
+    margin-top: 10vh
+
+.sidebar__nav__heading
+  font-size: 0.85rem
+  font-weight: 700
+  padding-left: 2em
+  padding-right: 3.5em
+
+.sidebar__nav__list
+  list-style: none
+  font-size: 1.1rem
+  padding: 0
+  color: white
+  li
+    display: block
+    transition: all .4s ease
+    .ico
+      margin-right: .5em
+    a
+      display: inline-block
+      padding: 0.6em 3.5em 0.7em 1.5em
+      border-left: 3px solid transparent
+    &.active a
+      border-color: $colorRed
+    &:hover:not(.active)
+      background: color(white a(10%))
+      a
+        border-color: color($fontColor a(50%))

@@ -1,28 +1,27 @@
-var gulp = require('gulp');
-var rename  = require('gulp-rename');
-var postcss = require('gulp-postcss');
-var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('autoprefixer');
-var sugarss = require('sugarss');
-var cssImport = require('postcss-import');
-var mixins = require('postcss-mixins');
-var simpleVars = require('postcss-simple-vars');
-var nested = require('postcss-nested');
-var cssnext = require('gulp-cssnext');
-var mqpacker = require('css-mqpacker');
-var pixrem = require('pixrem');
-
-var cssnano = require('cssnano');
-var sass = require('gulp-sass');
-var sassGlob = require('gulp-sass-glob');
-var useref = require('gulp-useref');
-var uglify = require('gulp-uglify');
-var gulpIf = require('gulp-if');
-var imagemin = require('gulp-imagemin');
-var cache = require('gulp-cache');
-var del = require('del');
-var runSequence = require('run-sequence');
-var browserSync = require('browser-sync').create();
+var gulp          = require('gulp');
+var rename        = require('gulp-rename');
+var postcss       = require('gulp-postcss');
+var sourcemaps    = require('gulp-sourcemaps');
+var autoprefixer  = require('autoprefixer');
+var sugarss       = require('sugarss');
+var precss        = require('precss');
+var sorting       = require('postcss-sorting');
+var cssnext       = require('postcss-cssnext');
+var short         = require('postcss-short');
+var colorFunction = require("postcss-color-function");
+var mqpacker      = require('css-mqpacker');
+var pixrem        = require('pixrem');
+var cssnano       = require('cssnano');
+var sass          = require('gulp-sass');
+var sassGlob      = require('gulp-sass-glob');
+var useref        = require('gulp-useref');
+var uglify        = require('gulp-uglify');
+var gulpIf        = require('gulp-if');
+var imagemin      = require('gulp-imagemin');
+var cache         = require('gulp-cache');
+var del           = require('del');
+var runSequence   = require('run-sequence');
+var browserSync   = require('browser-sync').create();
 
 // default task
 gulp.task('default', function (callback) {
@@ -34,16 +33,16 @@ gulp.task('default', function (callback) {
 // watch
 gulp.task('watch', function(){
   //gulp.watch('./src/sass/*.+(scss|sass)', ['sass']);
-  gulp.watch('./src/pcss/*.+(sss|css)', ['postcss']);
+  gulp.watch('./src/pcss/**/*.+(sss|css)', ['postcss']);
   gulp.watch('./src/*.html', browserSync.reload);
-  gulp.watch('./src/js/*.js', browserSync.reload);
+  gulp.watch('./src/js/**/*.js', browserSync.reload);
 })
 
 // build
 gulp.task('build', function (callback) {
   runSequence(
     'clean:dist',
-    'sass',
+    'postcss',
     ['useref', 'images', 'fonts'],
     callback
   )
@@ -54,23 +53,26 @@ gulp.task('build', function (callback) {
 /////
 
 var processors = [
-    cssImport(),
-    mixins(),
-    simpleVars(),
-    nested(),
-    autoprefixer({browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']}),
+    precss(),
+    short(),
+    colorFunction(),
+    autoprefixer({browsers: ['> 1%', 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']}),
+    //sorting(),
     mqpacker(),
     pixrem(),
-    cssnano(),
+    //cssnano(),
 ];
 
 gulp.task('postcss', function() {
-  return gulp.src('./src/pcss/*.sss')
+  return gulp.src('./src/pcss/style.sss')
       .pipe( sourcemaps.init() )
       .pipe( postcss(processors, { parser: sugarss }) )
       .pipe( sourcemaps.write('.') )
       .pipe(rename({ extname: '.css' }))
-      .pipe( gulp.dest('./src/css') );
+      .pipe( gulp.dest('./src/css') )
+      .pipe(browserSync.reload({
+        stream: true
+      }));
 });
 
 gulp.task('sass', function() {
@@ -92,7 +94,7 @@ gulp.task('sass', function() {
 gulp.task('useref', function(){
   return gulp.src('./src/*.html')
     .pipe(useref())
-    .pipe(gulpIf('*.js', uglify()))
+    //.pipe(gulpIf('*.js', uglify()))
     //.pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist'))
 });

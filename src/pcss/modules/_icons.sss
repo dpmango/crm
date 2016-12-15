@@ -1,0 +1,60 @@
+// ICONS
+.ico
+  display: inline-block
+  font-style: normal
+  content: ' '
+
+// navigation mixin
+@define-mixin svgNavIcon $name
+  background: url('../images/ico-nav-$(name).svg') no-repeat center
+  width: .8em
+  height: .8em
+
+// site controll mixin
+@define-mixin svgSiteControllIcon $name
+  background: url('../images/ico-site-control-$(name).svg') no-repeat center
+  width: 1em
+  height: 1em
+  vertical-align: .3em
+
+.ico-nav-home
+  @mixin svgNavIcon home
+.ico-nav-goods
+  @mixin svgNavIcon goods
+.ico-nav-mailer
+  @mixin svgNavIcon mailer
+.ico-nav-stats
+  @mixin svgNavIcon stats
+.ico-nav-proksi
+  @mixin svgNavIcon proksi
+.ico-nav-notes
+  @mixin svgNavIcon notes
+.ico-nav-pages
+  @mixin svgNavIcon pages
+.ico-nav-users
+  @mixin svgNavIcon users
+.ico-nav-money-add
+  @mixin svgNavIcon money-add
+.ico-nav-money-fix
+  @mixin svgNavIcon money-fix
+.ico-nav-help
+  @mixin svgNavIcon help
+
+.ico-nav-notification
+  border-radius: 50%
+  background: $orangeColor
+  margin-left: 3em
+
+.ico-toggler
+  background: url('../images/ico-toggle.svg') no-repeat center
+  size: .8em
+  float: right
+
+.ico-site-control-flag
+  @mixin svgSiteControllIcon flag
+.ico-site-control-refresh
+  @mixin svgSiteControllIcon refresh
+.ico-site-control-video
+  @mixin svgSiteControllIcon video
+.ico-site-control-settings
+  @mixin svgSiteControllIcon settings

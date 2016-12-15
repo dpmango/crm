@@ -1,0 +1,34 @@
+// buttons
+
+.btn
+  display: inline-block
+  content: ' '
+  padding: .4em .5em .5em .5em
+  font-size: 1.1rem
+  vertical-align: center
+  text-align: center
+  line-height: 1.1em
+  &:focus, &:active
+    outline: none
+
+.btn--rounded
+  border-radius: 50%
+
+.btn--selector
+  background-image: url('../images/btn-selector.svg')
+  background-repeat: no-repeat
+  background-position: 90% center
+  padding-left: 1em
+  padding-right: 2em
+  &.btn--rounded
+    border-radius: 1em
+  &.btn--outline
+    size: auto
+
+.btn--outline
+  border: 1px solid $borderButtonOutline
+  overflow: hidden
+  size: 2em
+  &.active
+    background: $colorGreen
+    border-color: $colorGreen
