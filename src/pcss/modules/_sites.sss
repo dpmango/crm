@@ -7,12 +7,15 @@
   h1
     display: inline-block
     margin: 0
+    font-size: 2.4rem
   &__pagination
     display: inline-block
     &__counter
       margin-right: 1em
-      padding-top: .8em
+      padding-top: 0.7em
       display: inline-block
+      vertical-align: top
+
 
 .sites__table
   margin-top: .7em
@@ -24,10 +27,14 @@
     border-bottom: 1px solid $borderColorLight
     span
       display: inline-block
+      &:first-child
+        padding-left: 1em
+      &:last-child
+        padding-right: 1em
   &__item
     display: flex
     justify-content: space-between
-    padding: 1em 2em
+    padding: 1.4em 1em
     margin-top: -1px
     border-radius: 5px
     cursor: pointer
@@ -61,7 +68,8 @@
 
 .ico-status
   border-radius: 50%
-  size: .6em
+  size: .7em
+  margin-right: .3em
   &--green
     background: $colorGreen
   &--red
@@ -83,13 +91,16 @@
     background: #f2f6fc
     padding: 3em 2em 2em 2em
     &__sitename
-      font-size: 1.4rem
+      font-size: 1.5rem
       font-weight: 700
       padding: 0.4em 0
     &__buttons
       padding: 0.4em 0
+      .btn
+        border-width: 2px
       div
         display: inline-block
+        margin-right: .7em
     &__status
       font-size: 1rem
       font-weight: 700
@@ -120,9 +131,23 @@
       a
         display: inline-block
         font-size: 1.1rem
-        padding: .5em .2em
+        padding: .5em .2em .5em 0
+        transition: all .4s ease
+        position: relative
         &:hover
-
+          opacity: .8
+          &::after
+            width: 100%
+        &::after
+          display: block
+          content: ' '
+          position: absolute
+          left: 0
+          bottom: .3em
+          height: 1px
+          background: $colorGreen
+          width: 0
+          transition: all .4s ease
 
 //horizontal-chart
 .horizontal-chart

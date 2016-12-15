@@ -15,7 +15,8 @@
   background: url('../images/ico-site-control-$(name).svg') no-repeat center
   width: 1em
   height: 1em
-  vertical-align: .3em
+  vertical-align: 0em
+  margin-right: .4em
 
 .ico-nav-home
   @mixin svgNavIcon home
@@ -44,6 +45,10 @@
   border-radius: 50%
   background: $orangeColor
   margin-left: 3em
+  font-size: 0.8rem
+  size: 1.4em
+  text-align: center
+  margin-top: -0.5em
 
 .ico-toggler
   background: url('../images/ico-toggle.svg') no-repeat center
@@ -58,3 +63,15 @@
   @mixin svgSiteControllIcon video
 .ico-site-control-settings
   @mixin svgSiteControllIcon settings
+
+.ico-paginate-prev, .ico-paginate-next
+  background: url('../images/btn-pagination-selector.svg') no-repeat
+  size: .8em
+  margin-top: .2em
+
+.ico-paginate-prev
+  transform: rotate(90deg)
+  margin-left: -.5em
+.ico-paginate-next
+  transform: rotate(-90deg)
+  margin-right: -.5em

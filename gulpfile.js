@@ -8,6 +8,7 @@ var precss        = require('precss');
 var sorting       = require('postcss-sorting');
 var cssnext       = require('postcss-cssnext');
 var short         = require('postcss-short');
+var svginline     = require('postcss-inline-svg');
 var colorFunction = require("postcss-color-function");
 var mqpacker      = require('css-mqpacker');
 var pixrem        = require('pixrem');
@@ -56,6 +57,7 @@ var processors = [
     precss(),
     short(),
     colorFunction(),
+    svginline(),
     autoprefixer({browsers: ['> 1%', 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']}),
     //sorting(),
     mqpacker(),

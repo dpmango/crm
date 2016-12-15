@@ -8,8 +8,11 @@
   vertical-align: center
   text-align: center
   line-height: 1.1em
+  transition: all .4s ease
   &:focus, &:active
     outline: none
+
+// generic modifiers
 
 .btn--rounded
   border-radius: 50%
@@ -32,3 +35,12 @@
   &.active
     background: $colorGreen
     border-color: $colorGreen
+
+// Specific
+.btn--pagination
+  position: relative
+  border-color: #e5eaf2
+  &:hover
+    border-color: $colorGreen
+    .ico
+      background-image: url('../images/btn-selector-active.svg')

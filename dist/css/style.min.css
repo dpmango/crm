@@ -3799,7 +3799,7 @@ code {
 a {
     color: inherit;
 }
-a:hover {
+a:hover, a:focus, a:visited {
     text-decoration: none;
 }
 html {
@@ -3859,12 +3859,14 @@ body {
     margin-top: 1em;
     margin-bottom: 2em;
     padding-left: 2em;
+    padding-right: 2em;
 }
 
 .sidebar__search .text-input {
     background-image: url('../images/ico-search.svg');
     background-repeat: no-repeat;
     background-position: right center;
+    padding-right: 1.5em;
 }
 
 .sidebar__search .text-input:not(:focus) {
@@ -3938,14 +3940,17 @@ body {
 .sites__header h1 {
     display: inline-block;
     margin: 0;
+    font-size: 33.6px;
+    font-size: 2.4rem;
 }
 .sites__header__pagination {
     display: inline-block;
 }
 .sites__header__pagination__counter {
     margin-right: 1em;
-    padding-top: .8em;
+    padding-top: 0.7em;
     display: inline-block;
+    vertical-align: top;
 }
 .sites__table {
     margin-top: .7em;
@@ -3964,6 +3969,12 @@ body {
 .sites__table__heading span {
     display: inline-block;
 }
+.sites__table__heading span:first-child {
+    padding-left: 1em;
+}
+.sites__table__heading span:last-child {
+    padding-right: 1em;
+}
 .sites__table__item {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3971,7 +3982,7 @@ body {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 1em 2em;
+    padding: 1.4em 1em;
     margin-top: -1px;
     border-radius: 5px;
     cursor: pointer;
@@ -4011,8 +4022,9 @@ body {
 }
 .ico-status {
     border-radius: 50%;
-    width: .6em;
-    height: .6em;
+    width: .7em;
+    height: .7em;
+    margin-right: .3em;
 }
 .ico-status--green {
     background: #4ab68f;
@@ -4038,16 +4050,20 @@ body {
     padding: 3em 2em 2em 2em;
 }
 .site-config__controls__sitename {
-    font-size: 19.599px;
-    font-size: 1.4rem;
+    font-size: 21px;
+    font-size: 1.5rem;
     font-weight: 700;
     padding: 0.4em 0;
 }
 .site-config__controls__buttons {
     padding: 0.4em 0;
 }
+.site-config__controls__buttons .btn {
+    border-width: 2px;
+}
 .site-config__controls__buttons div {
     display: inline-block;
+    margin-right: .7em;
 }
 .site-config__controls__status {
     font-size: 14px;
@@ -4086,9 +4102,29 @@ body {
     display: inline-block;
     font-size: 15.4px;
     font-size: 1.1rem;
-    padding: .5em .2em;
+    padding: .5em .2em .5em 0;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    position: relative;
 }
-.site-config__tags__list a:hover {}
+.site-config__tags__list a:hover {
+    opacity: .8;
+}
+.site-config__tags__list a:hover::after {
+    width: 100%;
+}
+.site-config__tags__list a::after {
+    display: block;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: .3em;
+    height: 1px;
+    background: #4ab68f;
+    width: 0;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+}
 /*horizontal-chart */
 .horizontal-chart {
     display: -webkit-box;
@@ -4240,6 +4276,12 @@ body {
     border-radius: 50%;
     background: #f46d36;
     margin-left: 3em;
+    font-size: 11.2px;
+    font-size: 0.8rem;
+    width: 1.4em;
+    height: 1.4em;
+    text-align: center;
+    margin-top: -0.5em;
 }
 .ico-toggler {
     background: url('../images/ico-toggle.svg') no-repeat center;
@@ -4251,25 +4293,47 @@ body {
     background: url('../images/ico-site-control-flag.svg') no-repeat center;
     width: 1em;
     height: 1em;
-    vertical-align: .3em;
+    vertical-align: 0em;
+    margin-right: .4em;
 }
 .ico-site-control-refresh {
     background: url('../images/ico-site-control-refresh.svg') no-repeat center;
     width: 1em;
     height: 1em;
-    vertical-align: .3em;
+    vertical-align: 0em;
+    margin-right: .4em;
 }
 .ico-site-control-video {
     background: url('../images/ico-site-control-video.svg') no-repeat center;
     width: 1em;
     height: 1em;
-    vertical-align: .3em;
+    vertical-align: 0em;
+    margin-right: .4em;
 }
 .ico-site-control-settings {
     background: url('../images/ico-site-control-settings.svg') no-repeat center;
     width: 1em;
     height: 1em;
-    vertical-align: .3em;
+    vertical-align: 0em;
+    margin-right: .4em;
+}
+.ico-paginate-prev, .ico-paginate-next {
+    background: url('../images/btn-pagination-selector.svg') no-repeat;
+    width: .8em;
+    height: .8em;
+    margin-top: .2em;
+}
+.ico-paginate-prev {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+    margin-left: -.5em;
+}
+.ico-paginate-next {
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    margin-right: -.5em;
 }
 /* buttons */
 .btn {
@@ -4281,10 +4345,13 @@ body {
     vertical-align: center;
     text-align: center;
     line-height: 1.1em;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
 }
 .btn:focus, .btn:active {
     outline: none;
 }
+/* generic modifiers */
 .btn--rounded {
     border-radius: 50%;
 }
@@ -4311,6 +4378,17 @@ body {
 .btn--outline.active {
     background: #4ab68f;
     border-color: #4ab68f;
+}
+/* Specific */
+.btn--pagination {
+    position: relative;
+    border-color: #e5eaf2;
+}
+.btn--pagination:hover {
+    border-color: #4ab68f;
+}
+.btn--pagination:hover .ico {
+    background-image: url('../images/btn-selector-active.svg');
 }
 @media(max-width: 500px) {
     .dashboard {
