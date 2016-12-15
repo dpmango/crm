@@ -38,12 +38,14 @@
     margin-top: -1px
     border-radius: 5px
     cursor: pointer
-    transition: all .4s ease
+    transition: all .6s ease
     border: 1px solid transparent
     border-bottom: 1px solid $borderColorLight
     &:hover
       background: #f6f8fb
       border: 1px solid $borderColorLight
+      margin-left: -1em
+      margin-right: -1em
     &__name
       font-weight: 700
     &__price
@@ -98,6 +100,9 @@
       padding: 0.4em 0
       .btn
         border-width: 2px
+        .ico
+          position: absolute 50% 50%
+          transform: translate(-50%, -50%)
       div
         display: inline-block
         margin-right: .7em

@@ -195,14 +195,16 @@ body {
     margin-top: -1px;
     border-radius: 5px;
     cursor: pointer;
-    -webkit-transition: all .4s ease;
-    transition: all .4s ease;
+    -webkit-transition: all .6s ease;
+    transition: all .6s ease;
     border: 1px solid transparent;
     border-bottom: 1px solid #f0f3f7;
 }
 .sites__table__item:hover {
     background: #f6f8fb;
     border: 1px solid #f0f3f7;
+    margin-left: -1em;
+    margin-right: -1em;
 }
 .sites__table__item__name {
     font-weight: 700;
@@ -269,6 +271,16 @@ body {
 }
 .site-config__controls__buttons .btn {
     border-width: 2px;
+}
+.site-config__controls__buttons .btn .ico {
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    left: 50%;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 .site-config__controls__buttons div {
     display: inline-block;
@@ -482,15 +494,20 @@ body {
     height: .8em;
 }
 .ico-nav-notification {
+    position: absolute;
+    right: 3em;
+    top: .5em;
     border-radius: 50%;
     background: #f46d36;
     margin-left: 3em;
+    font-weight: 700;
     font-size: 11.2px;
     font-size: 0.8rem;
-    width: 1.4em;
-    height: 1.4em;
+    width: 2em;
+    height: 2em;
+    padding-top: .5em;
     text-align: center;
-    margin-top: -0.5em;
+    vertical-align: top;
 }
 .ico-toggler {
     background: url('../images/ico-toggle.svg') no-repeat center;
@@ -583,6 +600,9 @@ body {
     overflow: hidden;
     width: 2em;
     height: 2em;
+}
+.btn--outline:hover {
+    border-color: #4ab68f;
 }
 .btn--outline.active {
     background: #4ab68f;
