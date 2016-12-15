@@ -5,11 +5,18 @@
   margin-bottom: 2em
   padding-left: 2em
   padding-right: 2em
+  @media($desktop)
+    padding-right: 1em
+    padding-left: 1.3em
   .text-input
     background-image: url('../images/ico-search.svg')
     background-repeat: no-repeat
     background-position: right center
     padding-right: 1.5em
+    @media($desktop)
+      width: 0px
+      cursor: pointer
+      border-bottom: none
     &:not(:focus)
       border-bottom-color: #a8bec9
       border-bottom-width: 2px
@@ -23,8 +30,9 @@
   font-size: 0.85rem
   font-weight: 700
   padding-left: 2em
-
   padding-right: 3.5em
+  @media($desktop)
+    display: none
 
 .sidebar__nav__list
   list-style: none
@@ -36,13 +44,40 @@
     transition: all .4s ease
     .ico
       margin-right: .5em
+      @media($desktop)
+        margin-right: 0
+    span
+      @media($desktop)
+        display: none
     a
       display: inline-block
       padding: 0.6em 3.5em 0.7em 1.5em
       border-left: 3px solid transparent
+      @media($desktop)
+        padding: 0.3em 1em 0.3em 1em
+        font-size: 1.4em
     &.active a
       border-color: $colorRed
     &:hover:not(.active)
       background: color(white a(10%))
       a
         border-color: color($fontColor a(50%))
+
+.ico-nav-notification
+  position: absolute
+  right: 3em
+  top: .5em
+  border-radius: 50%
+  background: $orangeColor
+  margin-left: 3em
+  font-weight: 700
+  font-size: 0.8rem
+  size: 2em
+  padding-top: .5em
+  text-align: center
+  vertical-align: top
+  @media($desktop)
+    font-size: .5rem
+    left: 0
+    span
+      display: none

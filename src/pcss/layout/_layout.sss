@@ -12,12 +12,11 @@ $dark: #101226
 $borderColorLight: #f0f3f7
 $borderButtonOutline: #a8bec9
 
-
 $mobile: width <= 500px
 $tablet: width <= 768px
 $desktop: width <= 1000px
-$wide: width >= 1200px
-$hd: width >= 1680px
+$wide: width <= 1200px
+$hd: width <= 1680px
 
 *
   box-sizing: border-box
@@ -52,10 +51,21 @@ body
   flex: 0 0 auto
   background: $dark
   padding-left: .4em
+  @media ($mobile)
+    display: none
 
 .sites
-  flex: 1 1 30%
+  flex: 1 1 35%
   padding: 3em 2em
+  max-height: 100vh
+  overflow-y: scroll
 
 .site-config
   flex: 2 1 40%
+
+.header-mobile
+  display: none
+  background: $dark
+  padding: 1em
+  @media($mobile)
+    display: block

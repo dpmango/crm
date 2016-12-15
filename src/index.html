@@ -13,7 +13,8 @@
   <!--build:css css/style.min.css -->
   <link rel="stylesheet" href="css/lib/normalize.css" type="text/css" />
   <link rel="stylesheet" href="css/lib/material.css" type="text/css" />
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/lib/hamburgers.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
   <!-- endbuild -->
   <!--[if lt IE 9]>
       <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
@@ -23,6 +24,39 @@
 <body>
 
   <main class="dashboard">
+    <!-- MOBILE HEADER:: START -->
+    <section class="header-mobile">
+      <div class="header-mobile__wrapper">
+        <button class="hamburger hamburger--collapse" type="button" id="show-me-menu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+      <div class="mobile-nav">
+        <ul class="mobile-nav-list">
+          <li><a href="#">Главная</a></li>
+          <li><a href="#">Услуги</a>
+            <ul class="mobile-nav-sublvl">
+              <li><a href="#">Разработка сайта визитки</a></li>
+              <li><a href="#">Разработка интернет-магазина</a></li>
+              <li><a href="#">Разработка лендинг пейжд</a></li>
+              <li><a href="#">Разработка лендинг-магазина</a></li>
+              <li><a href="#">Разработка корпоративного сайта</a></li>
+              <li><a href="#">Поддержка сайтов</a></li>
+              <li><a href="#">Продвижение сайтов</a></li>
+              <li><a href="#">Рекламная кампания</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Портфолио</a></li>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="#">Полезная информация</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+    </section>
+    <!-- MOBILE HEADER:: START -->
+
     <!-- SIDEBAR:: START -->
     <section class="sidebar">
       <div class="sidebar__search">
@@ -36,14 +70,14 @@
           <i class="ico ico-toggler"></i>
         </div>
         <ul class="sidebar__nav__list">
-          <li class="active"><a href="#"><i class="ico ico-nav-home"></i> Главная</a></li>
-          <li ripple="ripple"><a href="#"><i class="ico ico-nav-goods"></i> Товары</a></li>
-          <li ripple="ripple"><a href="#"><i class="ico ico-nav-mailer"></i> Рассылка <i class="ico ico-nav-notification">9</i></a></li>
-          <li ripple="ripple"><a href="#"><i class="ico ico-nav-stats"></i> Статистика</a></li>
-          <li ripple="ripple"><a href="#"><i class="ico ico-nav-proksi"></i> Прокси</a></li>
-          <li ripple="ripple"><a href="#"><i class="ico ico-nav-notes"></i> Заметки</a></li>
-          <li ripple="ripple"><a href="#"><i class="ico ico-nav-pages"></i> Страницы</a></li>
-          <li ripple="ripple"><a href="#"><i class="ico ico-nav-users"></i> Пользователи</a></li>
+          <li class="active"><a href="#"><i class="ico ico-nav-home"></i> <span>Главная</span></a></li>
+          <li ripple="ripple"><a href="#"><i class="ico ico-nav-goods"></i> <span>Товары</span></a></li>
+          <li ripple="ripple"><a href="#"><i class="ico ico-nav-mailer"></i> <span>Рассылка</span> <i class="ico ico-nav-notification"><span>9</span></i></a></li>
+          <li ripple="ripple"><a href="#"><i class="ico ico-nav-stats"></i> <span>Статистика</span></a></li>
+          <li ripple="ripple"><a href="#"><i class="ico ico-nav-proksi"></i> <span>Прокси</span></a></li>
+          <li ripple="ripple"><a href="#"><i class="ico ico-nav-notes"></i> <span>Заметки</span></a></li>
+          <li ripple="ripple"><a href="#"><i class="ico ico-nav-pages"></i> <span>Страницы</span></a></li>
+          <li ripple="ripple"><a href="#"><i class="ico ico-nav-users"></i> <span>Пользователи</span></a></li>
         </ul>
       </div>
       <div class="sidebar__nav sidebar__nav--bottom">
@@ -52,10 +86,10 @@
           <i class="ico ico-toggler"></i>
         </div>
         <ul class="sidebar__nav__list">
-          <li ripple="ripple"><a href="#"><i class="ico ico-nav-money-add"></i> Пополнить</a></li>
-          <li ripple="ripple"><a href="#"><i class="ico ico-nav-money-fix"></i> Фиксики</a></li>
-          <li ripple="ripple"><a href="#"><i class="ico ico-nav-money-fix"></i> Фиксики</a></li>
-          <li ripple="ripple"><a href="#"><i class="ico ico-nav-help"></i> Помощь</a></li>
+          <li ripple="ripple"><a href="#"><i class="ico ico-nav-money-add"></i> <span>Пополнить</span></a></li>
+          <li ripple="ripple"><a href="#"><i class="ico ico-nav-money-fix"></i> <span>Фиксики</span></a></li>
+          <li ripple="ripple"><a href="#"><i class="ico ico-nav-money-fix"></i> <span>Фиксики</span></a></li>
+          <li ripple="ripple"><a href="#"><i class="ico ico-nav-help"></i> <span>Помощь</span></a></li>
         </ul>
       </div>
     </section>
