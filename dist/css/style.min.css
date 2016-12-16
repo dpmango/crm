@@ -4278,6 +4278,10 @@ body {
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
 }
+.sites__table__item__controls .sites__table__item__controls__btn-wrap {
+    display: inline-block;
+    padding: 1em 0;
+}
 .ico-status {
     border-radius: 50%;
     width: .7em;
@@ -4347,6 +4351,9 @@ body {
 }
 .site-config__chart__controls {
     padding-top: 3em;
+}
+.site-config__chart__controls .dropdown .menu {
+    right: 0;
 }
 .site-config__chart__total-views {
     font-size: 16.8px;
