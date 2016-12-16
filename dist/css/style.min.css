@@ -3856,8 +3856,10 @@ body {
     z-index: 3;
 }
 .site-config {
-    -webkit-transition: all .4s ease-in;
-    transition: all .4s ease-in;
+    -webkit-transition: -webkit-transform .4s ease-in;
+    transition: -webkit-transform .4s ease-in;
+    transition: transform .4s ease-in;
+    transition: transform .4s ease-in, -webkit-transform .4s ease-in;
     -webkit-box-flex: 0;
         -ms-flex: 0 1 0px;
             flex: 0 1 0;
@@ -4351,10 +4353,14 @@ body.themeDark .horizontal-chart__overlays__line {
     padding-right: 2em;
 }
 .sites__table__item:hover .sites__table__item__attendance {
-    padding-right: 4em;
+    -webkit-transform: translateX(-4em);
+        -ms-transform: translateX(-4em);
+            transform: translateX(-4em);
 }
 .sites__table__item:hover .sites__table__item__controls {
-    right: 0.5em;
+    -webkit-transform: translate(-0.5em, -50%);
+        -ms-transform: translate(-0.5em, -50%);
+            transform: translate(-0.5em, -50%);
 }
 .sites__table__item__name {
     font-weight: 700;
@@ -4363,16 +4369,16 @@ body.themeDark .horizontal-chart__overlays__line {
     text-align: right;
     color: #a5a6bb;
     font-weight: 400;
-    -webkit-transition: padding .5s ease;
-    transition: padding .5s ease;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
 }
 .sites__table__item__controls {
     position: absolute;
-    right: -10em;
+    right: 0;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -webkit-transform: translate(10em, -50%);
+        -ms-transform: translate(10em, -50%);
+            transform: translate(10em, -50%);
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
 }

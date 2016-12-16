@@ -73,21 +73,21 @@
       margin-right: -1em
       padding-right: 2em
       .sites__table__item__attendance
-        padding-right: 4em
+        transform: translateX(-4em)
       .sites__table__item__controls
-        right: 0.5em
+        transform: translate(-0.5em, -50%)
     &__name
       font-weight: 700
     &__attendance
       text-align: right
       color: $fontColorTiny
       font-weight: 400
-      transition: padding .5s ease
+      transition: all .5s ease
     &__controls
       position: absolute
-      right: -10em
+      right: 0
       top: 50%
-      transform: translateY(-50%)
+      transform: translate(10em, -50%)
       transition: all .5s ease
       .sites__table__item__controls__btn-wrap
         display: inline-block
