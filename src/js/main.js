@@ -73,9 +73,11 @@ $(document).ready(function(){
   $('.theme-swticher label').click(function(){
     if ( themeCounter == 1 ) {
       $('body').addClass('themeDark');
+      $('#themeSwitcherName').text('ночь');
       themeCounter = 2;
     } else {
       $('body').removeClass('themeDark');
+      $('#themeSwitcherName').text('день');
       themeCounter = 1;
     }
   });

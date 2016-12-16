@@ -3799,11 +3799,6 @@ body {
     max-width: 100%;
     overflow-x: hidden;
 }
-.theme-swticher {
-    position: fixed;
-    bottom: .7em;
-    left: .7em;
-}
 .dashboard {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3826,6 +3821,7 @@ body {
     background: #101226;
     padding-left: .4em;
     min-height: 100vh;
+    position: relative;
 }
 .sites {
     -webkit-box-flex: 1;
@@ -3861,24 +3857,33 @@ body {
 }
 .site-config {
     -webkit-box-flex: 2;
-        -ms-flex: 2 1 40%;
-            flex: 2 1 40%;
-    display: none;
+        -ms-flex: 2 1 0px;
+            flex: 2 1 0;
     opacity: 0;
-    -webkit-transition: opacity .5s ease;
-    transition: opacity .5s ease;
+    -webkit-transition: all .4s ease-in;
+    transition: all .4s ease-in;
 }
 .site-config.active {
     opacity: 1;
-    display: block;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
 }
 .header-mobile {
     display: none;
     background: #101226;
     padding: 1em;
 }
+.theme-swticher {
+    position: absolute;
+    bottom: 2em;
+    left: 2.5em;
+}
+.theme-swticher #themeSwitcherName {
+    padding-left: .5em;
+    vertical-align: 0em;
+}
 body.themeDark {
-    background: #1d1d1d;
+    background: rgb(51,51,51);
 }
 body.themeDark .sidebar {
     background: #1d1d1d;
@@ -3888,7 +3893,7 @@ body.themeDark .sites {
     border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 body.themeDark .sites__header {
-    background: #1d1d1d;
+    background: rgb(51,51,51);
     color: white;
 }
 body.themeDark .sites__table {}
@@ -3912,7 +3917,7 @@ body.themeDark .site-config {
     color: white;
 }
 body.themeDark .site-config__controls {
-    background: #1d1d1d;
+    background: rgb(51,51,51);
     color: white;
 }
 body.themeDark .horizontal-chart {}
@@ -4672,6 +4677,27 @@ body.themeDark .horizontal-chart__overlays__line {
 }
 .ico-site-control-settings {
     background: url('../images/ico-site-control-settings.svg') no-repeat center;
+    width: 1em;
+    height: 1em;
+    vertical-align: 0em;
+    margin-right: .4em;
+}
+.ico-site-control-delete {
+    background: url('../images/ico-site-control-delete.svg') no-repeat center;
+    width: 1em;
+    height: 1em;
+    vertical-align: 0em;
+    margin-right: .4em;
+}
+.ico-site-control-back {
+    background: url('../images/ico-site-control-delete.svg') no-repeat center;
+    width: 1em;
+    height: 1em;
+    vertical-align: 0em;
+    margin-right: .4em;
+}
+.ico-site-control-back {
+    background: url('../images/ico-site-control-back.svg') no-repeat center;
     width: 1em;
     height: 1em;
     vertical-align: 0em;
