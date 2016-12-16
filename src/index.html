@@ -7,9 +7,9 @@
 	<title>Самая крутая CRM</title>
 	<!--build:js js/main.min.js -->
 	<script src="/js/lib/jquery-3.1.1.min.js"></script>
+  <script src="/js/lib/material.js"></script>
 	<script src="/js/main.js"></script>
 	<!-- endbuild -->
-    <!-- <script src="/js/lib/material.js"></script> -->
   <!--build:css css/style.min.css -->
   <link rel="stylesheet" href="css/lib/normalize.css" type="text/css" />
   <link rel="stylesheet" href="css/lib/material.css" type="text/css" />
@@ -484,22 +484,21 @@
           <!-- values-->
         </div>
         <div class="site-config__chart__controls">
-          <div class="select-button">
-            <a href="#" ripple="circle" class="btn btn--outline btn--rounded btn--selector mr1">Декабрь</a>
-            <select class="select-hidden" name="">
-              <option value="">Декабрь</option>
-              <option value="">Ноябрь</option>
-              <option value="">Октябрь</option>
-              <option value="">Сентябрь</option>
-            </select>
+          <div class="dropdown select-button">
+            <button ripple="circle" class="dropdown-menu btn btn--outline btn--rounded btn--selector mr1">Декабрь</button>
+            <ul class="menu">
+              <li ripple><a>Декабрь</a></li>
+              <li ripple><a>Ноябрь</a></li>
+              <li ripple><a>Октябрь</a></li>
+            </ul>
           </div>
-          <div class="select-button">
-            <a href="#" ripple="circle" class="btn btn--outline btn--rounded btn--selector">Просмотры</a>
-            <select class="select-hidden" name="">
-              <option value="">Просмотры</option>
-              <option value="">Глубина просмотра</option>
-              <option value="">Время на сайте</option>
-            </select>
+          <div class="dropdown select-button">
+            <button ripple="circle" class="dropdown-menu btn btn--outline btn--rounded btn--selector">Просмотры</button>
+            <ul class="menu">
+              <li ripple><a>Просмотры</a></li>
+              <li ripple><a>Глубина просмотра</a></li>
+              <li ripple><a>Время на сайте</a></li>
+            </ul>
           </div>
           <div class="site-config__chart__total-views">
             Просмотры: <span>23 574</span>

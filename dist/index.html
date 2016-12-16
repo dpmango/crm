@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Самая крутая CRM</title>
 	<script src="js/main.min.js"></script>
-    <!-- <script src="/js/lib/material.js"></script> -->
   <link rel="stylesheet" href="css/style.min.css">
   <!--[if lt IE 9]>
       <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
@@ -476,22 +475,21 @@
           <!-- values-->
         </div>
         <div class="site-config__chart__controls">
-          <div class="select-button">
-            <a href="#" ripple="circle" class="btn btn--outline btn--rounded btn--selector mr1">Декабрь</a>
-            <select class="select-hidden" name="">
-              <option value="">Декабрь</option>
-              <option value="">Ноябрь</option>
-              <option value="">Октябрь</option>
-              <option value="">Сентябрь</option>
-            </select>
+          <div class="dropdown select-button">
+            <button ripple="circle" class="dropdown-menu btn btn--outline btn--rounded btn--selector mr1">Декабрь</button>
+            <ul class="menu">
+              <li ripple><a>Декабрь</a></li>
+              <li ripple><a>Ноябрь</a></li>
+              <li ripple><a>Октябрь</a></li>
+            </ul>
           </div>
-          <div class="select-button">
-            <a href="#" ripple="circle" class="btn btn--outline btn--rounded btn--selector">Просмотры</a>
-            <select class="select-hidden" name="">
-              <option value="">Просмотры</option>
-              <option value="">Глубина просмотра</option>
-              <option value="">Время на сайте</option>
-            </select>
+          <div class="dropdown select-button">
+            <button ripple="circle" class="dropdown-menu btn btn--outline btn--rounded btn--selector">Просмотры</button>
+            <ul class="menu">
+              <li ripple><a>Просмотры</a></li>
+              <li ripple><a>Глубина просмотра</a></li>
+              <li ripple><a>Время на сайте</a></li>
+            </ul>
           </div>
           <div class="site-config__chart__total-views">
             Просмотры: <span>23 574</span>

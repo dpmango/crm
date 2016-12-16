@@ -3837,8 +3837,8 @@ body {
             flex: 2 1 40%;
     display: none;
     opacity: 0;
-    -webkit-transition: opacity .5s ease-out;
-    transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease;
+    transition: opacity .5s ease;
 }
 .site-config.active {
     opacity: 1;
@@ -3856,17 +3856,16 @@ body {
 /* General modules + UI */
 .select-button {
     position: relative;
-    display: inline-block;
+    display: inline-block;/* .select-hidden *//*   display: block *//*   position: absolute *//*   left: 0 *//*   top: 0 *//*   width: 100% *//*   line-height: 2em *//*   height: 100% *//*   opacity: 0 */
 }
-.select-button .select-hidden {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    line-height: 2em;
-    height: 100%;
-    opacity: 0;
+.select-button .dropdown-menu {
+    cursor: pointer;
+}
+.select-button .dropdown-menu:not(:focus):not(.active) {
+    border-bottom-color: #a8bec9;
+}
+.select-button .dropdown-menu:not(:focus):not(.active):hover {
+    border-color: #4ab68f;
 }
 .toolip-wrapper {
     position: relative;

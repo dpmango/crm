@@ -2,15 +2,21 @@
 .select-button
   position: relative
   display: inline-block
-  .select-hidden
-    display: block
-    position: absolute
-    left: 0
-    top: 0
-    width: 100%
-    line-height: 2em
-    height: 100%
-    opacity: 0
+  .dropdown-menu
+    cursor: pointer
+    &:not(:focus):not(.active)
+      border-bottom-color: $borderButtonOutline
+      &:hover
+        border-color: $colorGreen
+  // .select-hidden
+  //   display: block
+  //   position: absolute
+  //   left: 0
+  //   top: 0
+  //   width: 100%
+  //   line-height: 2em
+  //   height: 100%
+  //   opacity: 0
 
 .toolip-wrapper
   position: relative
