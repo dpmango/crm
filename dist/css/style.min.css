@@ -3800,9 +3800,9 @@ body {
     overflow-x: hidden;
 }
 .theme-swticher {
-    position: absolute;
-    right: 1em;
-    top: 1em;
+    position: fixed;
+    bottom: .7em;
+    left: .7em;
 }
 .dashboard {
     display: -webkit-box;
@@ -3818,10 +3818,6 @@ body {
         -ms-flex-pack: justify;
             justify-content: space-between;
     min-height: 100vh;
-}
-.dashboard.dark {
-    -webkit-filter: invert(1);
-            filter: invert(1);
 }
 .sidebar {
     -webkit-box-flex: 0;
@@ -3880,6 +3876,52 @@ body {
     display: none;
     background: #101226;
     padding: 1em;
+}
+body.themeDark {
+    background: #1d1d1d;
+}
+body.themeDark .sidebar {
+    background: #1d1d1d;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+body.themeDark .sites {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+body.themeDark .sites__header {
+    background: #1d1d1d;
+    color: white;
+}
+body.themeDark .sites__table {}
+body.themeDark .sites__table__heading {
+    color: rgba(255, 255, 255, 0.8);
+}
+body.themeDark .sites__table__item {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+body.themeDark .sites__table__item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+body.themeDark .sites__table__item__name {
+    color: white;
+}
+body.themeDark .site-config__title {
+    color: rgba(255, 255, 255, 0.8);
+}
+body.themeDark .site-config {
+    color: white;
+}
+body.themeDark .site-config__controls {
+    background: #1d1d1d;
+    color: white;
+}
+body.themeDark .horizontal-chart {}
+body.themeDark .horizontal-chart__bar {
+    background: rgba(255, 255, 255, 0.1);
+}
+body.themeDark .horizontal-chart__overlays {}
+body.themeDark .horizontal-chart__overlays__line {
+    border-color: rgba(255, 255, 255, 0.1);
 }
 /* Helpers */
 .mr1 {

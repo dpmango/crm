@@ -40,9 +40,9 @@ body
   overflow-x: hidden
 
 .theme-swticher
-  position: absolute
-  right: 1em
-  top: 1em
+  position: fixed
+  bottom: .7em
+  left: .7em
 
 .dashboard
   display: flex
@@ -52,10 +52,6 @@ body
   min-height: 100vh
   @media($mobile)
     flex-direction: column
-  &.dark
-    filter: invert(1)
-
-
 .sidebar
   flex: 0 0 auto
   background: $dark
@@ -88,7 +84,6 @@ body
       background: color(black a(7%)) url('../images/loading.gif') no-repeat center
       z-index: 3
 
-
 .site-config
   flex: 2 1 40%
   display: none
@@ -106,3 +101,38 @@ body
   padding: 1em
   @media($mobile)
     display: block
+
+$darkThemeColor: #1d1d1d
+body.themeDark
+  background: $darkThemeColor
+  .sidebar
+    background: #1d1d1d
+    border-right: 1px solid color(white a(10%))
+  .sites
+    border-right: 1px solid color(white a(10%))
+  .sites__header
+    background: $darkThemeColor
+    color: white
+  .sites__table
+    &__heading
+      color: color(white a(80%))
+    &__item
+      border-bottom-color: color(white a(10%))
+      &:hover
+        background: color(white a(10%))
+        border-color: color(white a(10%))
+      &__name
+        color: white
+  .site-config__title
+    color: color(white a(80%))
+  .site-config
+    color: white
+    &__controls
+      background: $darkThemeColor
+      color: white
+  .horizontal-chart
+    &__bar
+      background: color(white a(10%))
+    &__overlays
+      &__line
+        border-color: color(white a(10%))

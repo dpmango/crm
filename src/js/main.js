@@ -69,13 +69,15 @@ $(document).ready(function(){
 	});
 
   // change theme-swticher
-  $('.theme-swticher .switch').click(function(){
-    if ( $('#switch').attr('checked') != 'checked' ){
-      $('.dashboard').addClass('dark');
+  var themeCounter = 1;
+  $('.theme-swticher label').click(function(){
+    if ( themeCounter == 1 ) {
+      $('body').addClass('themeDark');
+      themeCounter = 2;
     } else {
-      $('.dashboard').removeClass('dark');
+      $('body').removeClass('themeDark');
+      themeCounter = 1;
     }
-
   });
 	// smoth scroll
 	$('a[href^="#section"]').click(function(){
