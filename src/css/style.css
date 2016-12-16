@@ -79,17 +79,15 @@ body {
     z-index: 3;
 }
 .site-config {
-    -webkit-box-flex: 2;
-        -ms-flex: 2 1 0px;
-            flex: 2 1 0;
     opacity: 0;
     -webkit-transition: all .4s ease-in;
     transition: all .4s ease-in;
 }
 .site-config.active {
     opacity: 1;
-    -ms-flex-preferred-size: 40%;
-        flex-basis: 40%;
+    -webkit-box-flex: 2;
+        -ms-flex: 2 1 40%;
+            flex: 2 1 40%;
 }
 .header-mobile {
     display: none;
