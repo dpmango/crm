@@ -81,13 +81,17 @@ body
       z-index: 3
 
 .site-config
-  opacity: 0
   transition: all .4s ease-in
+  flex: 0 1 0
+  overflow: hidden
+  transform: translateX(100%)
   &.active
-    opacity: 1
     flex: 2 1 40%
+    transform: translateX(0)
   @media($bp820)
-    flex-basis: 100%
+    flex: 1 1 100%
+    &.active
+      flex: 1 1 100%
 
 .header-mobile
   display: none
@@ -103,6 +107,10 @@ body
   #themeSwitcherName
     padding-left: .5em
     vertical-align: 0em
+    @media($desktop)
+      display: none
+  @media($desktop)
+    left: 1.3em
 
 $darkThemeColor: rgb(51,51,51)
 body.themeDark
