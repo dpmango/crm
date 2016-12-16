@@ -58,10 +58,28 @@ body
 
 .sites
   flex: 1 1 35%
-  padding: 3em 2em
+  position: relative
   min-height: 100vh
   max-height: 900px
+  margin-bottom: 1.5em
   overflow-y: scroll
+
+.sites__wrapper
+  position: relative
+  display: flex
+  flex-direction: column
+  &.loading
+    &::after
+      display: block
+      content: ' '
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: color(black a(7%)) url('../images/loading.gif') no-repeat center
+      z-index: 3
+
 
 .site-config
   flex: 2 1 40%

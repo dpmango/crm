@@ -92,71 +92,71 @@ var Theme = {
 };
 
 /* SideMenu code */
-var SideMenu = {
-	initialised: false,
-	isMaterialModule: true,
-	constructor: SideMenu,
-	init: function(params) {
-		if (this.initialised) return;
-		this.createOverlay();
-		if (params && params.overlay) {
-			this.setOverlay(params.overlay);
-		}
-		this.overlay.addEventListener("click", function() {
-			var sidemenus = document.querySelectorAll(".sidemenu");
-			for (var i = 0, len = sidemenus.length; i < len; i++) {
-				var sidemenu = sidemenus[i];
-				if (!sidemenu.hidden && (!sidemenu.classList.contains("sidebar") || (typeof Responsive == "undefined" || Responsive.device !== "desktop"))) {
-					this.hide(sidemenu);
-				}
-			}
-		}.bind(this));
-		if (typeof Responsive != "undefined") {
-			Responsive.addResizeHandler(this.onResize.bind(this));
-		}
-		this.onResize();
-		this.initialised = true;
-	},
-	createOverlay: function() {
-		if (document.querySelector(".sidemenu-overlay")) {
-			this.overlay = document.querySelectorAll(".sidemenu-overlay")[0];
-			return;
-		}
-		var overlay = document.createElement("div");
-		overlay.className = "overlay sidemenu-overlay";
-		overlay.hidden = true;
-		overlay.setAttribute("id", "mf_overlay_" + Math.floor(Math.random() * 100000));
-		document.body.appendChild(overlay);
-		this.overlay = overlay;
-	},
-	toggle: function(sm) {
-		if (!sm.classList.contains("sidebar") || (typeof Responsive == "undefined" || Responsive.device !== "desktop")) {
-			this.overlay.hidden = !sm.hidden;
-		}
-		sm.hidden = !sm.hidden;
-	},
-	show: function(sm) {
-		if (!sm.classList.contains("sidebar") || (typeof Responsive == "undefined" || Responsive.device !== "desktop")) {
-			this.overlay.hidden = false;
-		}
-		sm.hidden = false;
-	},
-	hide: function(sm) {
-		this.overlay.hidden = true;
-		sm.hidden = true;
-	},
-	onResize: function() {
-		var sidebars = document.querySelectorAll(".sidebar");
-		for (var i = 0, len = sidebars.length; i < len; i++) {
-			if (Responsive.device == "desktop") {
-				this.show(sidebars[i]);
-			}
-			else {
-				this.hide(sidebars[i]);
-			}
-		}
-	}
-};
+// var SideMenu = {
+// 	initialised: false,
+// 	isMaterialModule: true,
+// 	constructor: SideMenu,
+// 	init: function(params) {
+// 		if (this.initialised) return;
+// 		this.createOverlay();
+// 		if (params && params.overlay) {
+// 			this.setOverlay(params.overlay);
+// 		}
+// 		this.overlay.addEventListener("click", function() {
+// 			var sidemenus = document.querySelectorAll(".sidemenu");
+// 			for (var i = 0, len = sidemenus.length; i < len; i++) {
+// 				var sidemenu = sidemenus[i];
+// 				if (!sidemenu.hidden && (!sidemenu.classList.contains("sidebar") || (typeof Responsive == "undefined" || Responsive.device !== "desktop"))) {
+// 					this.hide(sidemenu);
+// 				}
+// 			}
+// 		}.bind(this));
+// 		if (typeof Responsive != "undefined") {
+// 			Responsive.addResizeHandler(this.onResize.bind(this));
+// 		}
+// 		this.onResize();
+// 		this.initialised = true;
+// 	},
+// 	createOverlay: function() {
+// 		if (document.querySelector(".sidemenu-overlay")) {
+// 			this.overlay = document.querySelectorAll(".sidemenu-overlay")[0];
+// 			return;
+// 		}
+// 		var overlay = document.createElement("div");
+// 		overlay.className = "overlay sidemenu-overlay";
+// 		overlay.hidden = true;
+// 		overlay.setAttribute("id", "mf_overlay_" + Math.floor(Math.random() * 100000));
+// 		document.body.appendChild(overlay);
+// 		this.overlay = overlay;
+// 	},
+// 	toggle: function(sm) {
+// 		if (!sm.classList.contains("sidebar") || (typeof Responsive == "undefined" || Responsive.device !== "desktop")) {
+// 			this.overlay.hidden = !sm.hidden;
+// 		}
+// 		sm.hidden = !sm.hidden;
+// 	},
+// 	show: function(sm) {
+// 		if (!sm.classList.contains("sidebar") || (typeof Responsive == "undefined" || Responsive.device !== "desktop")) {
+// 			this.overlay.hidden = false;
+// 		}
+// 		sm.hidden = false;
+// 	},
+// 	hide: function(sm) {
+// 		this.overlay.hidden = true;
+// 		sm.hidden = true;
+// 	},
+// 	onResize: function() {
+// 		var sidebars = document.querySelectorAll(".sidebar");
+// 		for (var i = 0, len = sidebars.length; i < len; i++) {
+// 			if (Responsive.device == "desktop") {
+// 				this.show(sidebars[i]);
+// 			}
+// 			else {
+// 				this.hide(sidebars[i]);
+// 			}
+// 		}
+// 	}
+// };
 
 /* Dialog code */
 var Dialog = {
@@ -276,9 +276,9 @@ var DropdownMenu = {
 		});
 	}
 }
-			
+
 /* FancyHeader Experimental
-  Example usage - demo.js: 
+  Example usage - demo.js:
   FancyHeader.init({
 	header:       document.querySelector(".toolbar"),
 	scrollTarget: document.querySelector(".main-content")

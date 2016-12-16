@@ -23,31 +23,59 @@
   transition: all .3s ease-in
   opacity: 0
   z-index: 4
-  .tooltip-toggle
+  &--visible
+    opacity: 1
+    .tooltip-toggle
+      opacity: 0
+    &:hover
+      .tooltip-toggle
+        opacity: 1
+  &--filter
+    .tooltip-toggle
+      border-radius: 1em
+      padding: .7em 1em
+      width: 6em
+      .ico
+        font-size: 1.2rem
+        cursor: pointer
+        margin-right: .1em
+        &:last-child
+          margin-right: 0
+  &--bottom
+    .tooltip-toggle
+      top: 2.7em
+      &::after
+        top: -4px
+        bottom: auto
+        border-width: 0px 5px 5px 5px
+        border-color: transparent transparent $fontColor transparent
+
+.tooltip-toggle
+  position: absolute
+  z-index: 5
+  transition: top .3s ease-out
+  top: -1em
+  left: 50%
+  transform: translateX(-50%)
+  background: $fontColor
+  border-radius: 1em
+  padding: .5em .6em
+  color: white
+  font-size: 0.825rem
+  font-weight: 700
+  &::after
     position: absolute
-    z-index: 5
-    transition: top .3s ease-out
-    top: -1em
+    display: block
     left: 50%
     transform: translateX(-50%)
-    background: $fontColor
-    border-radius: 1em
-    padding: .5em .6em
-    color: white
-    font-size: 0.825rem
-    font-weight: 700
-    &::after
-      position: absolute
-      display: block
-      left: 50%
-      transform: translateX(-50%)
-      bottom: -4px
-      content: ' '
-      // height: .5em
-      // width: .5em
-      border-style: solid
-      border-width: 5px 5px 0 5px
-      border-color: $fontColor transparent transparent transparent
+    bottom: -4px
+    content: ' '
+    // height: .5em
+    // width: .5em
+    border-style: solid
+    border-width: 5px 5px 0 5px
+    border-color: $fontColor transparent transparent transparent
+
 
 // Header mobile
 .header-mobile__wrapper

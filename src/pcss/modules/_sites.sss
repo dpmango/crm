@@ -7,6 +7,7 @@
   background: white
   z-index: 10
   width: 100%
+  padding: 3em 2em 1em 2em
   h1
     display: inline-block
     margin: 0
@@ -18,10 +19,18 @@
       padding-top: 0.7em
       display: inline-block
       vertical-align: top
+  &__filters
+    display: inline-block
 
 
 .sites__table
-  margin-top: .7em
+  padding-left: 2em
+  padding-right: 2em
+  padding-bottom: 1.5em
+  @media($mobile)
+    padding-left: 1em
+    padding-right: 1em
+
   &__heading
     display: flex
     justify-content: space-between
@@ -37,6 +46,8 @@
   &__item
     display: flex
     justify-content: space-between
+    position: relative
+    overflow: hidden
     padding: 1.4em 1em
     margin-top: -1px
     border-radius: 5px
@@ -51,27 +62,42 @@
       padding-left: 1.7em
       margin-right: -1em
       padding-right: 1.7em
+      .sites__table__item__attendance
+        padding-right: 4em
+      .sites__table__item__controls
+        right: 0.5em
     &__name
       font-weight: 700
-    &__price
-      color: $colorGreen
-      font-weight: 700
-      span
-        display: inline-block
-        position: relative
-        font-size: 1.1em
-        &::after
-          position: absolute
-          content: ' '
-          top: .7em
-          left: -0.05em
-          height: 2px
-          width: .5em
-          background: $colorGreen
-      &.no--price
-        color: $fontColorTiny
-        font-weight: 400
-
+    &__attendance
+      text-align: right
+      color: $fontColorTiny
+      font-weight: 400
+      transition: padding .3s ease
+    &__controls
+      position: absolute
+      right: -10em
+      top: 50%
+      transform: translateY(-50%)
+      transition: all .4s ease
+    // &__price
+    //   color: $colorGreen
+    //   font-weight: 700
+    //   text-align: right
+    //   span
+    //     display: inline-block
+    //     position: relative
+    //     font-size: 1.1em
+    //     &::after
+    //       position: absolute
+    //       content: ' '
+    //       top: .7em
+    //       left: -0.05em
+    //       height: 2px
+    //       width: .5em
+    //       background: $colorGreen
+    //   &.no--price
+    //     color: $fontColorTiny
+    //     font-weight: 400
 
 .ico-status
   border-radius: 50%
@@ -97,17 +123,22 @@
   &__controls
     background: #f2f6fc
     padding: 3em 2em 2em 2em
+    @media($mobile)
+      padding: 2em 1em 2em 1em
+    &__close
+      display: inline-block
+      float: right
+      opacity: .7
+      transition: all .3s ease-in
+      &:hover
+        opacity: 1
+
     &__sitename
       font-size: 1.5rem
       font-weight: 700
       padding: 0.4em 0
     &__buttons
       padding: 0.4em 0
-      .btn
-        border-width: 2px
-        .ico
-          position: absolute 50% 50%
-          transform: translate(-50%, -50%)
       div
         display: inline-block
         margin-right: .7em
@@ -123,6 +154,8 @@
   //chart
   &__chart
     padding: 2em
+    @media($mobile)
+      padding: 1.5em 1em
     &__controls
       padding-top: 3em
     &__total-views
@@ -130,6 +163,8 @@
       display: inline-block
       float: right
       padding-top: .2em
+      @media($mobile)
+        float: none
       span
         color: $colorRed
   //tags
@@ -137,6 +172,8 @@
     margin: 0 2em
     padding-top: 1.6em
     border-top: 1px solid $borderColorLight
+    @media($mobile)
+      margin: 0 1em
     &__list
       a
         display: inline-block
@@ -175,6 +212,9 @@
     border-radius: 4px
     text-align: center
     align-self: flex-end
+    @media($mobile)
+      width: 3%
+      margin-right: 0.5%
     &__value
       background: $colorGreen
       border-radius: 4px
@@ -195,6 +235,9 @@
       position: absolute
       bottom: -20px
       width: 100%
+      @media($mobile)
+        bottom: -15px
+        font-size: 0.5rem
   &__overlays
     &__line
       position: absolute

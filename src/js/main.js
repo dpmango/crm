@@ -23,14 +23,37 @@ $(document).ready(function(){
 	});
 
   // Fake dynamics
+  ////////////////
+  
   $('.sidebar__nav__list').on('click', 'li:not(.active)', function() {
     $(this).addClass('active').siblings().removeClass('active');
     //.closest('div.calculator__form__insurance').find('div.calculator__form__insurance__tabs').removeClass('active').eq($(this).index()).addClass('active');
   });
 
-  $('.sites__table__item').on('click', function() {
+  //site config show/hide
+  $('.sites__table__item__controls a[name=settings]').on('click', function() {
     $('.site-config').addClass('active');
   })
+  $('.sites__table__item__controls a[name=back]').on('click', function() {
+    $('.site-config').removeClass('active');
+  })
+  $('.site-config__controls__close').on('click', function() {
+    $('.site-config').removeClass('active');
+  })
+
+  // filter loader
+  $("#filterStatus i").click(function() {
+    startLoading();
+    setTimeout(finnishLoading, 2000);
+  })
+
+  function startLoading(){
+    $('.sites__wrapper').addClass('loading');
+  }
+
+  function finnishLoading(){
+    $('.sites__wrapper').removeClass('loading');
+  }
 
   // Prevent # errors
 	$('[href="#"]').click(function (e) {
