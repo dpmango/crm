@@ -24,14 +24,14 @@ $(document).ready(function(){
 
   // Fake dynamics
   ////////////////
-  
+
   $('.sidebar__nav__list').on('click', 'li:not(.active)', function() {
     $(this).addClass('active').siblings().removeClass('active');
     //.closest('div.calculator__form__insurance').find('div.calculator__form__insurance__tabs').removeClass('active').eq($(this).index()).addClass('active');
   });
 
   //site config show/hide
-  $('.sites__table__item__controls a[name=settings]').on('click', function() {
+  $('.sites__table__item').on('click', function() {
     $('.site-config').addClass('active');
   })
   $('.sites__table__item__controls a[name=back]').on('click', function() {

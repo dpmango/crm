@@ -471,9 +471,9 @@ body {
     background: #f6f8fb;
     border: 1px solid #f0f3f7;
     margin-left: -1em;
-    padding-left: 1.7em;
+    padding-left: 2em;
     margin-right: -1em;
-    padding-right: 1.7em;
+    padding-right: 2em;
 }
 .sites__table__item:hover .sites__table__item__attendance {
     padding-right: 4em;
@@ -488,8 +488,8 @@ body {
     text-align: right;
     color: #a5a6bb;
     font-weight: 400;
-    -webkit-transition: padding .3s ease;
-    transition: padding .3s ease;
+    -webkit-transition: padding .5s ease;
+    transition: padding .5s ease;
 }
 .sites__table__item__controls {
     position: absolute;
@@ -498,8 +498,8 @@ body {
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-    -webkit-transition: all .4s ease;
-    transition: all .4s ease;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
 }
 .ico-status {
     border-radius: 50%;
