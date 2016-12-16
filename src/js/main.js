@@ -31,7 +31,12 @@ $(document).ready(function(){
   });
 
   //site config show/hide
-  $('.sites__table__item').on('click', function() {
+  $('.sites__table__item').on('click', function(e) {
+    if (e.target !== this){
+      console.log('trigger');
+      e.stopPropagation();
+      return false
+    }
     $('.site-config').addClass('active');
   })
   $('.sites__table__item__controls a[name=back]').on('click', function() {
