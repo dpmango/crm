@@ -39,6 +39,11 @@ body
   max-width: 100%
   overflow-x: hidden
 
+.theme-swticher
+  position: absolute
+  right: 1em
+  top: 1em
+
 .dashboard
   display: flex
   flex-direction: row
@@ -47,6 +52,8 @@ body
   min-height: 100vh
   @media($mobile)
     flex-direction: column
+  &.dark
+    filter: invert(1)
 
 
 .sidebar
