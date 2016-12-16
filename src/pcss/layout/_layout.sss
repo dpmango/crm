@@ -81,13 +81,15 @@ body
       z-index: 3
 
 .site-config
-  transition: transform .4s ease-in
+  transition: transform .4s ease
   flex: 0 1 0
+  height: 0
   overflow: hidden
-  transform: translateX(100%)
+  transform: translate3d(100%,0px,0px)
   &.active
     flex: 2 1 40%
-    transform: translateX(0)
+    height: auto
+    transform: translate3d(0px,0px,0px)
   @media($bp820)
     flex: 1 1 100%
     &.active

@@ -79,25 +79,25 @@ body {
     z-index: 3;
 }
 .site-config {
-    -webkit-transition: -webkit-transform .4s ease-in;
-    transition: -webkit-transform .4s ease-in;
-    transition: transform .4s ease-in;
-    transition: transform .4s ease-in, -webkit-transform .4s ease-in;
+    -webkit-transition: -webkit-transform .4s ease;
+    transition: -webkit-transform .4s ease;
+    transition: transform .4s ease;
+    transition: transform .4s ease, -webkit-transform .4s ease;
     -webkit-box-flex: 0;
         -ms-flex: 0 1 0px;
             flex: 0 1 0;
+    height: 0;
     overflow: hidden;
-    -webkit-transform: translateX(100%);
-        -ms-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translate3d(100%,0px,0px);
+            transform: translate3d(100%,0px,0px);
 }
 .site-config.active {
     -webkit-box-flex: 2;
         -ms-flex: 2 1 40%;
             flex: 2 1 40%;
-    -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0);
+    height: auto;
+    -webkit-transform: translate3d(0px,0px,0px);
+            transform: translate3d(0px,0px,0px);
 }
 .header-mobile {
     display: none;
