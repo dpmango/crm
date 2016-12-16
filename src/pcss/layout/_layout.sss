@@ -12,7 +12,9 @@ $dark: #101226
 $borderColorLight: #f0f3f7
 $borderButtonOutline: #a8bec9
 $mobile: width <= 500px
+$mobile-from: width >= 500px
 $tablet: width <= 768px
+$bp820: width <= 820px
 $desktop: width <= 1000px
 $wide: width <= 1200px
 $hd: width <= 1680px
@@ -50,18 +52,27 @@ body
   flex: 0 0 auto
   background: $dark
   padding-left: .4em
+  min-height: 100vh
   @media ($mobile)
     display: none
 
 .sites
   flex: 1 1 35%
   padding: 3em 2em
-  max-height: 100vh
+  min-height: 100vh
+  max-height: 900px
   overflow-y: scroll
 
 .site-config
   flex: 2 1 40%
   display: none
+  opacity: 0
+  transition: opacity .5s ease-out
+  &.active
+    opacity: 1
+    display: block
+  @media($bp820)
+    flex-basis: 100%
 
 .header-mobile
   display: none

@@ -95,33 +95,42 @@
 .mobile-nav
   display: none
   color: white
-  font-size: 18px
+  font-size: 1.1rem
   background: $primary
-  @media($mobile)
-    display: block
   .mobile-nav-list
     list-style: none
     margin: 0
     padding: 20px 0
-  li
-    margin: 0
-    display: block
-  a
-    display: block
-    border-bottom: 1px solid #b9fced
-    padding: 6px 15px
-    transition: all .4s ease
-    &:hover
-      background: color(white a(10%))
-    &:active, &:focus
-      text-decoration: none
-      color: white
-  .mobile-nav-sublvl
-    display: none
-    font-size: 16px
-    padding-left: 20px
-    list-style: circle
-  &.active
-    display: block
-  a
-    border-bottom: none
+    li
+      margin: 0
+      display: block
+      transition: all .4s ease
+      .ico
+        margin-right: .5em
+      a
+        display: block
+        border-bottom: 1px solid color(white a(10%))
+        padding: 0.6em 3.5em 0.7em 0.7em
+        border-left: 3px solid transparent
+        transition: all .4s ease
+        &:hover
+          background: color(white a(10%))
+        &:active, &:focus
+          text-decoration: none
+          color: white
+      &.active a
+        border-left-color: $colorRed
+      &:hover:not(.active)
+        background: color(white a(10%))
+        a
+          border-color: color($fontColor a(50%))
+
+    .mobile-nav-sublvl
+      display: none
+      font-size: 16px
+      padding-left: 20px
+      list-style: circle
+      &.active
+        display: block
+      a
+        border-bottom: none
