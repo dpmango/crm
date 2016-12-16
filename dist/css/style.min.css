@@ -3907,7 +3907,7 @@ body {
     opacity: 1;
 }
 .toolip-wrapper--filter .tooltip-toggle {
-    border-radius: 1em;
+    border-radius: .5em;
     padding: .7em 1em;
     width: 6em;
 }
@@ -3920,6 +3920,11 @@ body {
 .toolip-wrapper--filter .tooltip-toggle .ico:last-child {
     margin-right: 0;
 }
+.toolip-wrapper--menu .tooltip-toggle {
+    border-radius: .5em;
+    padding: .7em 1em;
+    width: auto;
+}
 .toolip-wrapper--bottom .tooltip-toggle {
     top: 2.7em;
 }
@@ -3928,6 +3933,19 @@ body {
     bottom: auto;
     border-width: 0px 5px 5px 5px;
     border-color: transparent transparent #515974 transparent;
+}
+.toolip-wrapper--right .tooltip-toggle {
+    left: 5em;
+    top: 50%;
+    -webkit-transform: translateX(0) translateY(-50%);
+        -ms-transform: translateX(0) translateY(-50%);
+            transform: translateX(0) translateY(-50%);
+}
+.toolip-wrapper--right .tooltip-toggle::after {
+    left: -2px;
+    bottom: 9px;
+    border-width: 5px 5px 5px 0;
+    border-color: transparent #515974 transparent transparent;
 }
 .tooltip-toggle {
     position: absolute;
@@ -4123,6 +4141,10 @@ body {
     color: white;
 }
 
+.sidebar__nav__list [ripple] {
+    overflow: visible;
+}
+
 .sidebar__nav__list li {
     display: block;
     -webkit-transition: all .4s ease;
@@ -4134,6 +4156,8 @@ body {
 }
 
 .sidebar__nav__list li span {}
+
+.sidebar__nav__list li .tooltip-toggle {}
 
 .sidebar__nav__list li a {
     display: inline-block;
@@ -4186,20 +4210,29 @@ body {
 .sites__header h1 {
     display: inline-block;
     margin: 0;
+    margin-top: -.1em;
     font-size: 33.6px;
     font-size: 2.4rem;
 }
 .sites__header__pagination {
     display: inline-block;
+    text-align: right;
 }
 .sites__header__pagination__counter {
-    margin-right: 1em;
     padding-top: 0.7em;
+    padding-bottom: 0.5em;
     display: inline-block;
     vertical-align: top;
 }
-.sites__header__filters {
+.sites__header__pagination__buttons {
+    margin-left: 1em;
+    min-width: 4em;
     display: inline-block;
+}
+.sites__header__filters {
+    text-align: right;
+    display: inline-block;
+    margin: 0 .7em;
 }
 .sites__table {
     padding-left: 2em;
@@ -4216,6 +4249,9 @@ body {
     padding: 1em 0;
     color: #a5a6bb;
     border-bottom: 1px solid #f0f3f7;
+}
+.sites__table__heading #sortByAttendance {
+    cursor: pointer;
 }
 .sites__table__heading span {
     display: inline-block;
@@ -4757,5 +4793,10 @@ body {
     }
     .ico-nav-notification span {
         display: none;
+    }
+}
+@media(min-width: 1000px) {
+    .sidebar__nav__list li .tooltip-toggle {
+        display: none !important;
     }
 }

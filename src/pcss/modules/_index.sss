@@ -32,7 +32,7 @@
         opacity: 1
   &--filter
     .tooltip-toggle
-      border-radius: 1em
+      border-radius: .5em
       padding: .7em 1em
       width: 6em
       .ico
@@ -41,6 +41,11 @@
         margin-right: .1em
         &:last-child
           margin-right: 0
+  &--menu
+    .tooltip-toggle
+      border-radius: .5em
+      padding: .7em 1em
+      width: auto
   &--bottom
     .tooltip-toggle
       top: 2.7em
@@ -49,6 +54,16 @@
         bottom: auto
         border-width: 0px 5px 5px 5px
         border-color: transparent transparent $fontColor transparent
+  &--right
+    .tooltip-toggle
+      left: 5em
+      top: 50%
+      transform: translateX(0) translateY(-50%)
+      &::after
+        left: -2px
+        bottom: 9px
+        border-width: 5px 5px 5px 0
+        border-color: transparent $fontColor transparent transparent
 
 .tooltip-toggle
   position: absolute

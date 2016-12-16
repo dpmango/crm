@@ -11,16 +11,24 @@
   h1
     display: inline-block
     margin: 0
+    margin-top: -.1em
     font-size: 2.4rem
   &__pagination
     display: inline-block
+    text-align: right
     &__counter
-      margin-right: 1em
       padding-top: 0.7em
+      padding-bottom: 0.5em
       display: inline-block
       vertical-align: top
+    &__buttons
+      margin-left: 1em
+      min-width: 4em
+      display: inline-block
   &__filters
+    text-align: right
     display: inline-block
+    margin: 0 .7em
 
 
 .sites__table
@@ -37,6 +45,8 @@
     padding: 1em 0
     color: $fontColorTiny
     border-bottom: 1px solid $borderColorLight
+    #sortByAttendance
+      cursor: pointer
     span
       display: inline-block
       &:first-child
