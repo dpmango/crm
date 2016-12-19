@@ -15,6 +15,7 @@ $mobile: width <= 500px
 $mobile-from: width >= 500px
 $tablet: width <= 768px
 $bp820: width <= 820px
+$bp1080: width <= 1080px
 $desktop: width <= 1000px
 $desktop-from: width >= 1000px
 $wide: width <= 1200px
@@ -77,8 +78,11 @@ body
       left: 0
       right: 0
       bottom: 0
-      background: color(black a(7%)) url('../images/loading.gif') no-repeat center
+      background: color(black a(7%))
+      // background: color(black a(7%)) url('../images/loading.gif') no-repeat center
       z-index: 3
+    .socket
+      opacity: 1
 
 .site-config
   transition: transform .4s ease
